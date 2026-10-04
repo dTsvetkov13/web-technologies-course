@@ -1,0 +1,12 @@
+# Logs written by the form demos at runtime
+*-log.txt
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
