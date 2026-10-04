@@ -24,12 +24,12 @@ class Db {
         $userPassword = "";
 
         $this->connection = new PDO(
-            "mysql:host=$dbhost;dbname=$dbName",
+            "mysql:host=$dbhost;dbname=$dbName;charset=utf8mb4",
             $userName,
             $userPassword,
             [
-                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
             ]
         );
 
@@ -47,7 +47,7 @@ class Db {
 ### DSN формат
 
 ```
-mysql:host=localhost;dbname=myfirstdatabase
+mysql:host=localhost;dbname=myfirstdatabase;charset=utf8mb4
 ```
 
 | Част | Описание |
@@ -55,6 +55,7 @@ mysql:host=localhost;dbname=myfirstdatabase
 | `mysql:` | Драйвер за базата |
 | `host=` | Адрес на сървъра |
 | `dbname=` | Име на базата |
+| `charset=` | Кодировка на връзката — винаги `utf8mb4` |
 
 ### Настройки
 
@@ -64,7 +65,9 @@ mysql:host=localhost;dbname=myfirstdatabase
 | `PDO::ERRMODE_EXCEPTION` | Хвърля exception при грешка |
 | `PDO::ATTR_DEFAULT_FETCH_MODE` | Формат на върнатите данни |
 | `PDO::FETCH_ASSOC` | Връща асоциативен масив |
-| `PDO::MYSQL_ATTR_INIT_COMMAND` | SQL команда при свързване |
+| `PDO::ATTR_EMULATE_PREPARES` | `false` — истински prepared statements от сървъра |
+
+> **Защо `utf8mb4`, а не `utf8`?** В MySQL `utf8` е непълен — побира само 3 байта на символ и не може да запише емоджи и някои редки символи. `utf8mb4` е пълният UTF-8. Задавайте го в DSN, не с `SET NAMES`, защото тогава важи от първата заявка.
 
 ## Prepared Statements
 
