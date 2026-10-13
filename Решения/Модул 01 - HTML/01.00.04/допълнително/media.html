@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мултимедия - Музей на провалените изобретения</title>
+    <meta name="description" content="Хронология на провалите, видео зала и залата на провалените HTML тагове.">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/logo.svg" alt="Музей на провалените изобретения - към началната страница" width="80"></a>
+        <p><strong>Музей на провалените изобретения</strong></p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="exhibits.html">Експонати</a></li>
+                <li><a href="media.html" aria-current="page">Мултимедия</a></li>
+                <li><a href="visit.html">Посещение</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Мултимедийна зала</h1>
+
+        <section>
+            <h2>Хронология на провала</h2>
+            <table border="1">
+                <caption>Експонатите на музея по година на появяване</caption>
+                <thead>
+                    <tr>
+                        <th>Година</th>
+                        <th>Изобретение</th>
+                        <th>Компания</th>
+                        <th>Какво се обърка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1985</td>
+                        <td><a href="exhibits.html#sinclair-c5">Sinclair C5</a></td>
+                        <td>Sinclair Vehicles</td>
+                        <td>Ниско, бавно и без покрив</td>
+                    </tr>
+                    <tr>
+                        <td>1985</td>
+                        <td><a href="exhibits.html#new-coke">New Coke</a></td>
+                        <td>Coca-Cola</td>
+                        <td>Хората искаха старата рецепта</td>
+                    </tr>
+                    <tr>
+                        <td>1993</td>
+                        <td><a href="exhibits.html#newton">Apple Newton</a></td>
+                        <td>Apple</td>
+                        <td>Разпознаването на почерк грешеше</td>
+                    </tr>
+                    <tr>
+                        <td>1995</td>
+                        <td><a href="exhibits.html#virtual-boy">Virtual Boy</a></td>
+                        <td>Nintendo</td>
+                        <td>Червено-черна картина и главоболие</td>
+                    </tr>
+                    <tr>
+                        <td>2001</td>
+                        <td><a href="exhibits.html#segway">Segway</a></td>
+                        <td>Segway Inc.</td>
+                        <td>Скъп и неудобен за градовете</td>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td><a href="exhibits.html#google-glass">Google Glass</a></td>
+                        <td>Google</td>
+                        <td>Хората се притесняваха, че ги снимат</td>
+                    </tr>
+                    <tr>
+                        <td>2016</td>
+                        <td><a href="exhibits.html#juicero">Juicero</a></td>
+                        <td>Juicero</td>
+                        <td>Пакетите се изстискват и на ръка</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"><strong>Общо експонати</strong></td>
+                        <td><strong>7</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section>
+            <h2>Видео зала</h2>
+            <figure>
+                <video controls width="480" crossorigin="anonymous"
+                       poster="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Segways_at_Colonial_Williamsburg.webm/500px--Segways_at_Colonial_Williamsburg.webm.jpg"
+                       src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Segways_at_Colonial_Williamsburg.webm">
+                    <track kind="subtitles" src="subtitles.bg.vtt" srclang="bg" label="Български" default>
+                    Браузърът ти не поддържа видео.
+                </video>
+                <figcaption>Туристическа обиколка със Segway. Видео: Doug Coldwell, CC BY-SA 3.0, Wikimedia Commons</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Експонат, нарисуван на ръка</h2>
+            <p>Счупена крушка - символът на всяка идея, която не е проработила. Нарисувана е със SVG, без нито една снимка.</p>
+            <svg width="120" height="160" viewBox="0 0 120 160" role="img" aria-label="Счупена крушка">
+                <circle cx="60" cy="60" r="45" fill="#fff6c2" stroke="#2f3a4a" stroke-width="4"/>
+                <rect x="42" y="105" width="36" height="30" fill="#9aa3ad" stroke="#2f3a4a" stroke-width="4"/>
+                <line x1="45" y1="120" x2="75" y2="120" stroke="#2f3a4a" stroke-width="3"/>
+                <polyline points="40,30 55,50 45,62 62,80" fill="none" stroke="#2f3a4a" stroke-width="3"/>
+            </svg>
+        </section>
+
+        <section>
+            <h2>Залата на провалените HTML тагове</h2>
+            <p>Не само изобретенията се провалят. HTML също има своите експонати - тагове, които някога са били модерни, а днес не бива да се ползват.</p>
+            <dl>
+                <dt><code>&lt;blink&gt;</code></dt>
+                <dd>Текстът мига. Измислен от Netscape през 90-те, мразен от всички. Днешните браузъри го игнорират.</dd>
+
+                <dt><code>&lt;marquee&gt;</code></dt>
+                <dd>Текстът пълзи по екрана като бягащ надпис. Още работи в браузърите, но е остарял и не е част от стандарта.</dd>
+
+                <dt><code>&lt;font color="red"&gt;</code></dt>
+                <dd>Сменя шрифта и цвета на текста. Заменен от CSS.</dd>
+
+                <dt><code>&lt;center&gt;</code></dt>
+                <dd>Центрира съдържанието. Също заменен от CSS.</dd>
+            </dl>
+            <p>Поуката: структурата е работа на HTML, видът - на CSS, а поведението - на JavaScript. HTML &amp; CSS &amp; JS, всеки със своето.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>ул. „Неуспешна“ 404, София · вторник - неделя, 10:00 - 18:00</p>
+        <p>&copy; 2026 Музей на провалените изобретения</p>
+    </footer>
+</body>
+</html>

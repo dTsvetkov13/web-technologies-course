@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Посещение - Музей на провалените изобретения</title>
+    <meta name="description" content="Адрес, работно време, карта и онлайн резервация за посещение в Музея на провалените изобретения.">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Музей на провалените изобретения",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. „Неуспешна“ 404",
+            "addressLocality": "София",
+            "addressCountry": "BG"
+        },
+        "telephone": "+359888000404",
+        "openingHours": "Tu-Su 10:00-18:00"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/logo.svg" alt="Музей на провалените изобретения - към началната страница" width="80"></a>
+        <p><strong>Музей на провалените изобретения</strong></p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="exhibits.html">Експонати</a></li>
+                <li><a href="media.html">Мултимедия</a></li>
+                <li><a href="visit.html" aria-current="page">Посещение</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Посещение</h1>
+
+        <section>
+            <h2>Как да ни намерите</h2>
+            <address>
+                ул. „Неуспешна“ 404, София<br>
+                Телефон: <a href="tel:+359888000404">+359 888 000 404</a><br>
+                Имейл: <a href="mailto:info@museum-of-failures.example">info@museum-of-failures.example</a>
+            </address>
+        </section>
+
+        <section>
+            <h2>Карта</h2>
+            <iframe loading="lazy" width="600" height="400"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=23.3250%2C42.6710%2C23.3370%2C42.6780&amp;layer=mapnik&amp;marker=42.6745%2C23.3307"
+                    title="Карта: местоположение на музея"></iframe>
+            <p><a href="https://www.openstreetmap.org/?mlat=42.6745&amp;mlon=23.3307#map=17/42.6745/23.3307" target="_blank" rel="noopener noreferrer">Виж по-голяма карта</a></p>
+        </section>
+
+        <section>
+            <h2>Работно време</h2>
+            <ul>
+                <li>Вторник - неделя: 10:00 - 18:00</li>
+                <li>Понеделник: почивен ден (опитахме да работим и в понеделник - не се получи)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Често задавани въпроси</h2>
+            <details>
+                <summary>Мога ли да пипам експонатите?</summary>
+                <p>Не. Повечето вече са се провалили веднъж - не искаме да стане два пъти.</p>
+            </details>
+            <details>
+                <summary>Има ли намаление за студенти?</summary>
+                <p>Да, студентският билет е 4 €. Носете студентска карта.</p>
+            </details>
+            <details>
+                <summary>Мога ли да даря свое провалено изобретение?</summary>
+                <p>Разбира се. Пишете ни на имейла по-горе и разкажете защо не е проработило.</p>
+            </details>
+        </section>
+
+        <section>
+            <h2>Резервация</h2>
+            <p>Резервирайте посещение. Плащането е на касата - ако не дойдете, няма проблем, свикнали сме с провали.</p>
+
+            <form action="https://httpbin.org/post" method="post">
+                <fieldset>
+                    <legend>Посетител</legend>
+                    <p>
+                        <label for="name">Име и фамилия:</label>
+                        <input type="text" id="name" name="name" autocomplete="name" minlength="2" required>
+                    </p>
+                    <p>
+                        <label for="email">Имейл:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </p>
+                    <p>
+                        <label for="phone">Телефон (по желание):</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+359888123456"
+                               pattern="\+359[0-9]{9}" title="Във формат +359 и 9 цифри, например +359888123456">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Посещение</legend>
+                    <p>
+                        <label for="date">Дата:</label>
+                        <input type="date" id="date" name="date" min="2026-10-01" required>
+                    </p>
+                    <p>Час на влизане:</p>
+                    <p>
+                        <label><input type="radio" name="time" value="10:00" required> 10:00</label>
+                        <label><input type="radio" name="time" value="12:00"> 12:00</label>
+                        <label><input type="radio" name="time" value="14:00"> 14:00</label>
+                        <label><input type="radio" name="time" value="16:00"> 16:00</label>
+                    </p>
+                    <p>
+                        <label for="guide">Обиколка:</label>
+                        <select id="guide" name="guide">
+                            <optgroup label="Сами">
+                                <option value="none">Без екскурзовод</option>
+                                <option value="audio">С аудиогид</option>
+                            </optgroup>
+                            <optgroup label="С екскурзовод">
+                                <option value="guide-bg">На български</option>
+                                <option value="guide-en">На английски</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Билети</legend>
+                    <p>
+                        <label for="tickets">Брой билети:</label>
+                        <input type="number" id="tickets" name="tickets" min="1" max="10" value="1">
+                    </p>
+                    <p>Допълнително:</p>
+                    <p>
+                        <label><input type="checkbox" name="extras" value="photo"> Снимка с Segway</label>
+                        <label><input type="checkbox" name="extras" value="souvenir"> Сувенир: счупена крушка</label>
+                        <label><input type="checkbox" name="extras" value="coke"> Дегустация на New Coke</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <label for="source">Откъде научихте за нас?</label>
+                    <input list="sources" id="source" name="source">
+                    <datalist id="sources">
+                        <option value="От приятел">
+                        <option value="От социалните мрежи">
+                        <option value="От лекция по уеб технологии">
+                    </datalist>
+                </p>
+                <p>
+                    <label for="notes">Бележки:</label><br>
+                    <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Нещо, което трябва да знаем?"></textarea>
+                </p>
+                <p>
+                    <label><input type="checkbox" name="rules" value="yes" required> Обещавам да не натискам червения бутон</label>
+                </p>
+                <p>
+                    <button type="submit">Резервирай</button>
+                    <button type="reset">Изчисти</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>ул. „Неуспешна“ 404, София · вторник - неделя, 10:00 - 18:00</p>
+        <p>&copy; 2026 Музей на провалените изобретения</p>
+    </footer>
+</body>
+</html>
