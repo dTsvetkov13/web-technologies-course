@@ -1,0 +1,448 @@
+/* =========================================================
+   Little Fern Coffee Co. — SOLUTION stylesheet
+   ---------------------------------------------------------
+   This is the starter style.css with all 5 challenges done.
+   Every change is marked with a "CHALLENGE n" comment so
+   you can compare it with the original file.
+
+   1. Variables     5. Hero
+   2. Base styles   6. Menu
+   3. Layout        7. Our beans
+   4. Header        8. Visit us
+                    9. Footer
+                   10. Responsive (Challenge 5)
+   ========================================================= */
+
+
+/* ---------- 1. VARIABLES ---------- */
+:root {
+  --color-forest: #1f3a2e;   /* dark green: header, headings     */
+  --color-moss:   #4f6b55;   /* softer green: secondary text     */
+  --color-sage:   #e9eee6;   /* page background                  */
+  --color-paper:  #fbfcf9;   /* cards                            */
+  --color-saffron:#e3a72f;   /* accent: buttons, prices          */
+  --color-saffron-dark: #c98e1c; /* CHALLENGE 3: button hover    */
+  --color-line:   #cfd8cb;   /* thin borders                     */
+
+  --font-heading: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body:    "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+  --radius: 6px;
+  --speed: 0.25s;            /* CHALLENGE 3: one speed for all transitions */
+}
+
+
+/* ---------- 2. BASE STYLES ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-sage);
+  color: var(--color-forest);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--color-forest);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-saffron);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 3. LAYOUT ---------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* CHALLENGE 4: when you click a nav link, stop the section title
+   from hiding underneath the sticky header */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+}
+
+.section-intro {
+  color: var(--color-moss);
+  margin-bottom: 32px;
+}
+
+
+/* ---------- 4. HEADER & NAVIGATION ---------- */
+.site-header {
+  background: var(--color-forest);
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  /* CHALLENGE 4: stay at the top of the screen while scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 10;       /* keeps the header above the cards and badges */
+}
+
+/* CHALLENGE 1: logo and nav side by side.
+   Mobile first: on phones they stack (column).
+   The row version is in section 10. */
+.site-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.logo {
+  display: inline-block;
+  color: var(--color-paper);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  /* CHALLENGE 1: margin-bottom removed, the flex gap does this now */
+}
+
+.logo span {
+  color: var(--color-saffron);
+  font-weight: 500;
+}
+
+/* CHALLENGE 1: links in a row, spaced with gap instead of margin-right */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: var(--color-paper);
+  font-weight: 600;
+
+  /* CHALLENGE 3: an underline that is invisible until hover */
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-color: transparent;
+}
+
+.main-nav a:hover {
+  text-decoration-color: var(--color-saffron);
+}
+
+
+/* ---------- 5. HERO ---------- */
+.hero {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.eyebrow {
+  color: var(--color-moss);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  /* CHALLENGE 5: never smaller than 2.3rem, never bigger than 3.4rem,
+     and in between it grows with the width of the screen (vw) */
+  font-size: clamp(2.3rem, 6vw + 1rem, 3.4rem);
+  font-weight: 800;
+  max-width: 14ch;
+}
+
+.hero-intro {
+  font-size: 1.2rem;
+  max-width: 34em;
+  margin-bottom: 28px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--color-saffron);
+  color: var(--color-forest);
+  border: 2px solid var(--color-saffron);
+  border-radius: var(--radius);
+  padding: 12px 24px;
+  margin: 0 8px 8px 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--color-forest);
+}
+
+/* CHALLENGE 3: button hover states */
+.btn:hover {
+  background: var(--color-saffron-dark);
+  border-color: var(--color-saffron-dark);
+}
+
+.btn-outline:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  color: var(--color-paper);
+}
+
+/* Today's pour-over card */
+.brew-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 40px;
+  max-width: 340px;
+}
+
+.brew-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.brew-origin {
+  color: var(--color-moss);
+}
+
+.brew-card dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+}
+
+.brew-card dd {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.brew-notes {
+  border-top: 1px dashed var(--color-line);
+  padding-top: 12px;
+  margin: 0;
+  font-style: italic;
+}
+
+
+/* ---------- 6. MENU ---------- */
+
+/* CHALLENGE 2: the cards sit in a grid.
+   Mobile first: 1 column here, 2 and 3 columns in section 10. */
+.menu-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.menu-item {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  /* CHALLENGE 2: margin-bottom removed, the grid gap does this now */
+
+  /* CHALLENGE 2: a flex column, so the price can be pushed down */
+  display: flex;
+  flex-direction: column;
+
+  /* CHALLENGE 4: the badge is positioned relative to this card */
+  position: relative;
+}
+
+.menu-item h3 {
+  font-size: 1.3rem;
+}
+
+.menu-item p {
+  color: var(--color-moss);
+}
+
+.menu-item .price {
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  margin-top: auto;   /* CHALLENGE 2: fill the empty space above = sit at the bottom */
+}
+
+/* CHALLENGE 3: cards lift a little on hover */
+.menu-item:hover {
+  border-color: var(--color-saffron);
+  box-shadow: 0 10px 24px rgba(31, 58, 46, 0.14);
+}
+
+/* CHALLENGE 4: "Bestseller" badge pinned to the top-right corner */
+.badge {
+  position: absolute;
+  top: -12px;          /* negative = sticks out above the card edge */
+  right: 16px;
+  background: var(--color-saffron);
+  color: var(--color-forest);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px; /* a very big radius makes a pill shape */
+}
+
+
+/* ---------- 7. OUR BEANS ---------- */
+.beans {
+  background: var(--color-forest);
+  color: var(--color-sage);
+}
+
+.beans p {
+  max-width: 38em;
+  font-size: 1.15rem;
+}
+
+
+/* ---------- 8. VISIT US ---------- */
+
+/* CHALLENGE 2: the two boxes in a grid (1 column on phones,
+   2 columns from 600px, see section 10) */
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.visit-info {
+  /* CHALLENGE 2: margin-bottom removed, the grid gap does this now */
+}
+
+.hours {
+  border-collapse: collapse;
+}
+
+.hours th,
+.hours td {
+  text-align: left;
+  padding: 8px 24px 8px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.hours th {
+  font-weight: 600;
+}
+
+address {
+  font-style: normal;
+}
+
+
+/* ---------- 9. FOOTER ---------- */
+.site-footer {
+  background: var(--color-forest);
+  color: var(--color-line);
+  font-size: 0.9rem;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+
+/* ---------- 10. TRANSITIONS & RESPONSIVE ---------- */
+
+/* CHALLENGE 3: animate only for people who have NOT asked their
+   device to reduce motion. Without this block, hover still works,
+   it just changes instantly. */
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .main-nav a,
+  .menu-item {
+    transition: background-color var(--speed) ease,
+                border-color var(--speed) ease,
+                color var(--speed) ease,
+                text-decoration-color var(--speed) ease,
+                box-shadow var(--speed) ease,
+                transform var(--speed) ease;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* CHALLENGE 5: tablets and up (600px and wider) */
+@media (min-width: 600px) {
+  /* CHALLENGE 1: logo left, links right, on one row */
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CHALLENGE 5: desktop (900px and wider) */
+@media (min-width: 900px) {
+  .menu-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* hero text and brew card side by side */
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .brew-card {
+    margin-top: 0;
+    max-width: none;
+  }
+}

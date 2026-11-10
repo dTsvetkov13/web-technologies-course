@@ -1,0 +1,160 @@
+/* =========================================================
+   Challenge overview — fits on one screen
+   ---------------------------------------------------------
+   The trick: html and body are exactly as tall as the screen,
+   and body is a grid with 2 rows (header / cards).
+   The middle row takes whatever height is left (1fr).
+   ========================================================= */
+
+:root {
+  --color-forest: #1f3a2e;
+  --color-moss:   #4f6b55;
+  --color-sage:   #e9eee6;
+  --color-paper:  #fbfcf9;
+  --color-saffron:#e3a72f;
+  --color-line:   #cfd8cb;
+
+  --font-heading: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body:    "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;   /* at least as tall as the screen; grows only if it must */
+  margin: 0;
+  background: var(--color-sage);
+  color: var(--color-forest);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.45;
+
+  display: grid;
+  grid-template-rows: auto 1fr;   /* header, cards */
+  gap: 3vh;
+  padding: 4vh 32px;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+
+/* ---------- Header ---------- */
+.top {
+  display: grid;
+  gap: 6px;
+  max-width: 60em;
+}
+
+.eyebrow {
+  color: var(--color-moss);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vh, 2.8rem);
+  font-weight: 800;
+}
+
+
+
+/* ---------- The 5 cards ---------- */
+.challenges {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);   /* all 5 side by side */
+  gap: 16px;
+  min-height: 0;
+}
+
+.card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-top: 6px solid var(--color-forest);
+  border-radius: var(--radius);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+}
+
+.card h2 {
+  font-size: 1.35rem;
+}
+
+/* Small "pill" tags for the CSS concepts */
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tags li {
+  background: var(--color-sage);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+}
+
+/* The expected result always sits at the bottom of the card */
+.result {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-line);
+  color: var(--color-moss);
+}
+
+.result strong {
+  color: var(--color-forest);
+}
+
+
+
+/* ---------- Smaller screens ----------
+   5 columns get too narrow, so we use 3 + 2.
+   On a phone it can't fit one screen, so it simply scrolls. */
+@media (max-width: 1000px) {
+  .challenges {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 24px 16px;
+  }
+
+  .challenges {
+    grid-template-columns: 1fr;
+  }
+}

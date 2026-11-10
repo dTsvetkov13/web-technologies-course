@@ -1,0 +1,290 @@
+/* =========================================================
+   Little Fern Coffee Co. — starter stylesheet
+   ---------------------------------------------------------
+   The file is split into sections that match index.html:
+   1. Variables     5. Hero
+   2. Base styles   6. Menu
+   3. Layout        7. Our beans
+   4. Header        8. Visit us
+                    9. Footer
+   ========================================================= */
+
+
+/* ---------- 1. VARIABLES ----------
+   Change a colour here and it updates everywhere it is used. */
+:root {
+  --color-forest: #1f3a2e;   /* dark green: header, headings     */
+  --color-moss:   #4f6b55;   /* softer green: secondary text     */
+  --color-sage:   #e9eee6;   /* page background                  */
+  --color-paper:  #fbfcf9;   /* cards                            */
+  --color-saffron:#e3a72f;   /* accent: buttons, prices          */
+  --color-line:   #cfd8cb;   /* thin borders                     */
+
+  --font-heading: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body:    "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+  --radius: 6px;
+}
+
+
+/* ---------- 2. BASE STYLES ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-sage);
+  color: var(--color-forest);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--color-forest);
+}
+
+/* A visible outline for people who navigate with the keyboard */
+a:focus-visible {
+  outline: 3px solid var(--color-saffron);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 3. LAYOUT ----------
+   .container keeps content centred and not too wide. */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+}
+
+.section-intro {
+  color: var(--color-moss);
+  margin-bottom: 32px;
+}
+
+
+/* ---------- 4. HEADER & NAVIGATION ---------- */
+.site-header {
+  background: var(--color-forest);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  display: inline-block;
+  color: var(--color-paper);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.logo span {
+  color: var(--color-saffron);
+  font-weight: 500;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-right: 24px;
+}
+
+.main-nav a {
+  color: var(--color-paper);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+/* ---------- 5. HERO ---------- */
+.hero {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.eyebrow {
+  color: var(--color-moss);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  max-width: 14ch;
+}
+
+.hero-intro {
+  font-size: 1.2rem;
+  max-width: 34em;
+  margin-bottom: 28px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--color-saffron);
+  color: var(--color-forest);
+  border: 2px solid var(--color-saffron);
+  border-radius: var(--radius);
+  padding: 12px 24px;
+  margin: 0 8px 8px 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--color-forest);
+}
+
+/* Today's pour-over card */
+.brew-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 40px;
+  max-width: 340px;
+}
+
+.brew-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.brew-origin {
+  color: var(--color-moss);
+}
+
+.brew-card dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+}
+
+.brew-card dd {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.brew-notes {
+  border-top: 1px dashed var(--color-line);
+  padding-top: 12px;
+  margin: 0;
+  font-style: italic;
+}
+
+
+/* ---------- 6. MENU ---------- */
+.menu-item {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.menu-item h3 {
+  font-size: 1.3rem;
+}
+
+.menu-item p {
+  color: var(--color-moss);
+}
+
+.menu-item .price {
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* ---------- 7. OUR BEANS ---------- */
+.beans {
+  background: var(--color-forest);
+  color: var(--color-sage);
+}
+
+.beans p {
+  max-width: 38em;
+  font-size: 1.15rem;
+}
+
+
+/* ---------- 8. VISIT US ---------- */
+.visit-info {
+  margin-bottom: 32px;
+}
+
+.hours {
+  border-collapse: collapse;
+}
+
+.hours th,
+.hours td {
+  text-align: left;
+  padding: 8px 24px 8px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.hours th {
+  font-weight: 600;
+}
+
+address {
+  font-style: normal;
+}
+
+
+/* ---------- 9. FOOTER ---------- */
+.site-footer {
+  background: var(--color-forest);
+  color: var(--color-line);
+  font-size: 0.9rem;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.site-footer p {
+  margin: 0;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprint 14 Backlog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== SPRINT HEADER ========== -->
+  <header class="sprint">
+    <div class="sprint-title">
+      <p class="project">LF &middot; Little Fern website</p>
+      <h1>Sprint 14</h1>
+    </div>
+
+    <dl class="sprint-meta">
+      <div><dt>Dates</dt><dd>10 &ndash; 21 Nov 2026</dd></div>
+      <div><dt>Goal</dt><dd>Make the site look finished before the winter menu launch</dd></div>
+      <div><dt>Repo</dt><dd><code>coffee-shop/</code> &middot; HTML + CSS only</dd></div>
+      <div><dt>Assigned to</dt><dd>You</dd></div>
+    </dl>
+  </header>
+
+  <!-- ========== TICKETS ========== -->
+  <main class="board">
+
+    <!-- Ticket 1 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-101</span>
+        <span class="type type-bug">Bug</span>
+        <span class="priority priority-high">High</span>
+      </div>
+      <h2>Header links sit under the logo</h2>
+      <p class="story">The logo and the nav links are on two lines, so the header looks broken and wastes space.</p>
+      <h3>Acceptance criteria</h3>
+      <ul class="criteria">
+        <li>Logo left, links right, one row</li>
+        <li>Items vertically centred</li>
+        <li>Link spacing uses <code>gap</code>, not margins</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">flexbox</span>
+        <span class="reporter">QA</span>
+        <span class="points" title="Story points">2</span>
+      </div>
+    </article>
+
+    <!-- Ticket 2 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-102</span>
+        <span class="type type-story">Story</span>
+        <span class="priority priority-high">High</span>
+      </div>
+      <h2>Show the menu as a card grid</h2>
+      <p class="story">As a customer, I want to see the whole menu at a glance, so I don&rsquo;t scroll through one long list.</p>
+      <h3>Acceptance criteria</h3>
+      <ul class="criteria">
+        <li>Menu: 3 equal columns</li>
+        <li>Visit us: 2 columns</li>
+        <li>Prices line up at the card bottom</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">css-grid</span>
+        <span class="reporter">Product</span>
+        <span class="points" title="Story points">3</span>
+      </div>
+    </article>
+
+    <!-- Ticket 3 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-103</span>
+        <span class="type type-story">Story</span>
+        <span class="priority priority-medium">Medium</span>
+      </div>
+      <h2>Hover feedback on clickable things</h2>
+      <p class="story">As a visitor, I want buttons and cards to react to my mouse, so I know what I can click.</p>
+      <h3>Acceptance criteria</h3>
+      <ul class="criteria">
+        <li>Buttons and nav links change on hover</li>
+        <li>Menu cards lift with a shadow</li>
+        <li>Animates in ~0.25 s, off for reduced motion</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">transitions</span>
+        <span class="reporter">Design</span>
+        <span class="points" title="Story points">2</span>
+      </div>
+    </article>
+
+    <!-- Ticket 4 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-104</span>
+        <span class="type type-story">Story</span>
+        <span class="priority priority-medium">Medium</span>
+      </div>
+      <h2>Bestseller badges and sticky header</h2>
+      <p class="story">As the shop owner, I want our top drinks highlighted and the menu link always reachable.</p>
+      <h3>Acceptance criteria</h3>
+      <ul class="criteria">
+        <li>&ldquo;Bestseller&rdquo; pill on Flat White and Cold Brew</li>
+        <li>Badge overlaps the card&rsquo;s top-right corner</li>
+        <li>Header stays visible while scrolling</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">positioning</span>
+        <span class="reporter">Owner</span>
+        <span class="points" title="Story points">3</span>
+      </div>
+    </article>
+
+    <!-- Ticket 5 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-105</span>
+        <span class="type type-story">Story</span>
+        <span class="priority priority-high">High</span>
+      </div>
+      <h2>Make the site work on phones</h2>
+      <p class="story">62% of our visitors use a phone. As one of them, I want a layout that fits my screen.</p>
+      <h3>Acceptance criteria</h3>
+      <ul class="criteria">
+        <li>Menu: 1 / 2 / 3 columns at &lt;600 / 600 / 900px</li>
+        <li>Hero heading scales with <code>clamp()</code></li>
+        <li>No sideways scrolling at 360px</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">responsive</span>
+        <span class="reporter">Marketing</span>
+        <span class="points" title="Story points">5</span>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>

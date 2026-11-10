@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Fern Coffee</title>
+
+  <!-- Fonts from Google Fonts: one for headings, one for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700&display=swap">
+
+  <!-- All of our styles live in this one file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER & NAVIGATION ========== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="logo">Little Fern <span>Coffee Co.</span></a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#beans">Our Beans</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <p class="eyebrow">Small-batch roastery &middot; Since 2019</p>
+          <h1>Slow coffee for busy mornings.</h1>
+          <p class="hero-intro">
+            We roast our beans every Tuesday, brew every cup by hand,
+            and keep a quiet corner for you near the window.
+          </p>
+          <a href="#menu" class="btn">See the menu</a>
+          <a href="#visit" class="btn btn-outline">Find us</a>
+        </div>
+
+        <!-- A small "recipe card" for today's pour-over -->
+        <aside class="brew-card">
+          <h2>Today&rsquo;s pour-over</h2>
+          <p class="brew-origin">Huila, Colombia</p>
+          <dl>
+            <dt>Roast</dt>   <dd>Light</dd>
+            <dt>Ratio</dt>   <dd>1 : 16</dd>
+            <dt>Water</dt>   <dd>94 &deg;C</dd>
+            <dt>Brew time</dt><dd>3 min 30 s</dd>
+          </dl>
+          <p class="brew-notes">Tastes like: red apple, panela, cocoa</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ========== MENU ========== -->
+    <section id="menu" class="menu">
+      <div class="container">
+        <h2 class="section-title">The menu</h2>
+        <p class="section-intro">Every drink can be made with oat, almond or whole milk.</p>
+
+        <div class="menu-list">
+          <article class="menu-item">
+            <h3>Espresso</h3>
+            <p>A double shot of our house blend. Chocolatey and bold.</p>
+            <p class="price">&euro;2.40</p>
+          </article>
+
+          <article class="menu-item">
+            <span class="badge">Bestseller</span> <!-- Challenge 4 -->
+            <h3>Flat White</h3>
+            <p>Espresso with silky steamed milk and a thin layer of foam.</p>
+            <p class="price">&euro;3.60</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Pour-Over</h3>
+            <p>Hand-brewed single origin. Ask us what&rsquo;s on the bar today.</p>
+            <p class="price">&euro;4.20</p>
+          </article>
+
+          <article class="menu-item">
+            <span class="badge">Bestseller</span> <!-- Challenge 4 -->
+            <h3>Cold Brew</h3>
+            <p>Steeped for 18 hours, served over ice. Smooth, never bitter.</p>
+            <p class="price">&euro;3.90</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Cardamom Bun</h3>
+            <p>Soft, buttery and baked fresh in our kitchen every morning.</p>
+            <p class="price">&euro;3.20</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Matcha Latte</h3>
+            <p>Ceremonial-grade matcha whisked with your choice of milk.</p>
+            <p class="price">&euro;4.00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== OUR BEANS ========== -->
+    <section id="beans" class="beans">
+      <div class="container">
+        <h2 class="section-title">Our beans</h2>
+        <p>
+          We buy green coffee directly from three small farms in Colombia,
+          Ethiopia and Guatemala. Then we roast it ourselves, in small
+          12&nbsp;kg batches, so every bag you take home is less than a week old.
+        </p>
+        <p>
+          Not sure what you like? Tell the barista how you take your coffee
+          and we&rsquo;ll pour you a free tasting sample.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== VISIT US ========== -->
+    <section id="visit" class="visit">
+      <div class="container">
+        <h2 class="section-title">Visit us</h2>
+
+        <!-- Challenge 2: wrapper so the two boxes can sit in a grid -->
+        <div class="visit-grid">
+          <div class="visit-info">
+            <h3>Opening hours</h3>
+            <table class="hours">
+              <tr><th>Monday &ndash; Friday</th><td>7:00 &ndash; 18:00</td></tr>
+              <tr><th>Saturday</th>              <td>8:00 &ndash; 17:00</td></tr>
+              <tr><th>Sunday</th>                <td>9:00 &ndash; 14:00</td></tr>
+            </table>
+          </div>
+
+          <div class="visit-info">
+            <h3>Address</h3>
+            <address>
+              14 Linden Street<br>
+              Old Town, 1000<br>
+              hello@littlefern.coffee
+            </address>
+          </div>
+        </div> <!-- /.visit-grid -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Little Fern Coffee Co. Made with HTML, CSS and a lot of espresso.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
