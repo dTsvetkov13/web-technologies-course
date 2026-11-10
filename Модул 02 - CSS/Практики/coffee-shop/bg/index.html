@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Fern Coffee</title>
+
+  <!-- Шрифтове от Google Fonts: един за заглавията, един за текста -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700&display=swap">
+
+  <!-- Всички стилове са в този един файл -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== ХЕДЪР И НАВИГАЦИЯ ========== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="logo">Little Fern <span>Coffee Co.</span></a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#beans">Нашето кафе</a></li>
+          <li><a href="#visit">Посети ни</a></li>
+          <li><a href="../en/index.html" hreflang="en" lang="en">EN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== НАЧАЛЕН БАНЕР (HERO) ========== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <p class="eyebrow">Малка пържилня за кафе &middot; от 2019</p>
+          <h1>Бавно кафе за забързани сутрини.</h1>
+          <p class="hero-intro">
+            Печем зърната си всеки вторник, приготвяме всяка чаша на ръка
+            и пазим за теб тихо ъгълче до прозореца.
+          </p>
+          <a href="#menu" class="btn">Виж менюто</a>
+          <a href="#visit" class="btn btn-outline">Как да ни намериш</a>
+        </div>
+
+        <!-- Малка „рецепта“ за днешното филтърно кафе -->
+        <aside class="brew-card">
+          <h2>Днешното филтърно</h2>
+          <p class="brew-origin">Уила, Колумбия</p>
+          <dl>
+            <dt>Изпичане</dt>  <dd>Светло</dd>
+            <dt>Съотношение</dt><dd>1 : 16</dd>
+            <dt>Вода</dt>      <dd>94 &deg;C</dd>
+            <dt>Време</dt>     <dd>3 мин 30 с</dd>
+          </dl>
+          <p class="brew-notes">Има вкус на: червена ябълка, тръстикова захар, какао</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ========== МЕНЮ ========== -->
+    <section id="menu" class="menu">
+      <div class="container">
+        <h2 class="section-title">Менюто</h2>
+        <p class="section-intro">Всяка напитка може да бъде с овесено, бадемово или прясно мляко.</p>
+
+        <div class="menu-list">
+          <article class="menu-item">
+            <h3>Еспресо</h3>
+            <p>Двойно от нашия бленд. Шоколадово и плътно.</p>
+            <p class="price">&euro;2.40</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Флат уайт</h3>
+            <p>Еспресо с копринено мляко и тънък слой пяна.</p>
+            <p class="price">&euro;3.60</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Филтърно</h3>
+            <p>Кафе от един произход, на ръка. Питай ни какво има днес.</p>
+            <p class="price">&euro;4.20</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Колд брю</h3>
+            <p>Накисва се 18 часа, сервира се с лед. Меко, никога горчиво.</p>
+            <p class="price">&euro;3.90</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Кардамонов кок</h3>
+            <p>Мек и маслен, печем го в нашата кухня всяка сутрин.</p>
+            <p class="price">&euro;3.20</p>
+          </article>
+
+          <article class="menu-item">
+            <h3>Матча лате</h3>
+            <p>Церемониална матча, разбита с мляко по твой избор.</p>
+            <p class="price">&euro;4.00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== НАШЕТО КАФЕ ========== -->
+    <section id="beans" class="beans">
+      <div class="container">
+        <h2 class="section-title">Нашето кафе</h2>
+        <p>
+          Купуваме зелено кафе директно от три малки ферми в Колумбия,
+          Етиопия и Гватемала. После го печем сами, на малки партиди
+          по 12&nbsp;кг, така че всеки плик, който отнасяш, е на по-малко от седмица.
+        </p>
+        <p>
+          Не знаеш какво ти харесва? Кажи на баристата как пиеш кафето си
+          и ще ти налеем безплатна дегустация.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== ПОСЕТИ НИ ========== -->
+    <section id="visit" class="visit">
+      <div class="container">
+        <h2 class="section-title">Посети ни</h2>
+
+        <div class="visit-info">
+          <h3>Работно време</h3>
+          <table class="hours">
+            <tr><th>Понеделник &ndash; петък</th><td>7:00 &ndash; 18:00</td></tr>
+            <tr><th>Събота</th>                  <td>8:00 &ndash; 17:00</td></tr>
+            <tr><th>Неделя</th>                  <td>9:00 &ndash; 14:00</td></tr>
+          </table>
+        </div>
+
+        <div class="visit-info">
+          <h3>Адрес</h3>
+          <address>
+            ул. „Липа“ 14<br>
+            Стария град, 1000<br>
+            hello@littlefern.coffee
+          </address>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ФУТЪР ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Little Fern Coffee Co. Направено с HTML, CSS и много еспресо.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

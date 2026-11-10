@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спринт 14</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== ЗАГЛАВИЕ НА СПРИНТА ========== -->
+  <header class="sprint">
+    <div class="sprint-title">
+      <p class="project">LF &middot; Сайтът на Little Fern &middot; <a href="../../en/tickets/index.html" hreflang="en" lang="en">English</a></p>
+      <h1>Спринт 14</h1>
+    </div>
+
+    <dl class="sprint-meta">
+      <div><dt>Дати</dt><dd>10 &ndash; 21 ноем. 2026</dd></div>
+      <div><dt>Цел</dt><dd>Сайтът да изглежда завършен преди зимното меню</dd></div>
+      <div><dt>Код</dt><dd><code>coffee-shop/</code> &middot; само HTML + CSS</dd></div>
+      <div><dt>Възложено на</dt><dd>Теб</dd></div>
+    </dl>
+  </header>
+
+  <!-- ========== ЗАДАЧИ ========== -->
+  <main class="board">
+
+    <!-- Задача 1 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-101</span>
+        <span class="type type-bug">Бъг</span>
+        <span class="priority priority-high">Висок</span>
+      </div>
+      <h2>Линковете в хедъра са под логото</h2>
+      <p class="story">Логото и линковете са на два реда, затова хедърът изглежда счупен и заема излишно място.</p>
+      <h3>Критерии за приемане</h3>
+      <ul class="criteria">
+        <li>Логото вляво, линковете вдясно, на един ред</li>
+        <li>Центрирани по вертикала</li>
+        <li>Разстоянието между линковете е с <code>gap</code>, не с margin</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">flexbox</span>
+        <span class="reporter">QA</span>
+        <span class="points" title="Точки">2</span>
+      </div>
+    </article>
+
+    <!-- Задача 2 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-102</span>
+        <span class="type type-story">История</span>
+        <span class="priority priority-high">Висок</span>
+      </div>
+      <h2>Менюто като решетка от картички</h2>
+      <p class="story">Като клиент искам да виждам цялото меню наведнъж, за да не скролвам през дълъг списък.</p>
+      <h3>Критерии за приемане</h3>
+      <ul class="criteria">
+        <li>Меню: 3 еднакви колони</li>
+        <li>„Посети ни“: 2 колони</li>
+        <li>Цените са подравнени най-долу</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">css-grid</span>
+        <span class="reporter">Продукт</span>
+        <span class="points" title="Точки">3</span>
+      </div>
+    </article>
+
+    <!-- Задача 3 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-103</span>
+        <span class="type type-story">История</span>
+        <span class="priority priority-medium">Среден</span>
+      </div>
+      <h2>Реакция при посочване</h2>
+      <p class="story">Като посетител искам бутоните и картичките да реагират на мишката, за да знам какво се цъка.</p>
+      <h3>Критерии за приемане</h3>
+      <ul class="criteria">
+        <li>Бутоните и линковете се променят при посочване</li>
+        <li>Картичките се повдигат със сянка</li>
+        <li>Анимация ~0,25 s, изключена при reduced motion</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">transitions</span>
+        <span class="reporter">Дизайн</span>
+        <span class="points" title="Точки">2</span>
+      </div>
+    </article>
+
+    <!-- Задача 4 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-104</span>
+        <span class="type type-story">История</span>
+        <span class="priority priority-medium">Среден</span>
+      </div>
+      <h2>Етикети „Най-продавано“ и залепващ хедър</h2>
+      <p class="story">Като собственик искам най-продаваните напитки да се открояват, а менюто да е винаги на един клик.</p>
+      <h3>Критерии за приемане</h3>
+      <ul class="criteria">
+        <li>Етикет на Флат уайт и Колд брю</li>
+        <li>Етикетът излиза над горния десен ъгъл</li>
+        <li>Хедърът остава видим при скролване</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">positioning</span>
+        <span class="reporter">Собственик</span>
+        <span class="points" title="Точки">3</span>
+      </div>
+    </article>
+
+    <!-- Задача 5 -->
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="key">LF-105</span>
+        <span class="type type-story">История</span>
+        <span class="priority priority-high">Висок</span>
+      </div>
+      <h2>Сайтът да работи на телефон</h2>
+      <p class="story">62% от посетителите ни са от телефон. Като един от тях искам оформление, което пасва на екрана ми.</p>
+      <h3>Критерии за приемане</h3>
+      <ul class="criteria">
+        <li>Меню: 1 / 2 / 3 колони при &lt;600 / 600 / 900px</li>
+        <li>Заглавието в банера се мащабира с <code>clamp()</code></li>
+        <li>Без скрол настрани при 360px</li>
+      </ul>
+      <div class="ticket-bottom">
+        <span class="label">responsive</span>
+        <span class="reporter">Маркетинг</span>
+        <span class="points" title="Точки">5</span>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+/* =========================================================
+   Little Fern Coffee Co. — РЕШЕНИЕ
+   ---------------------------------------------------------
+   Това е началният style.css с решени и петте задачи.
+   Всяка промяна е отбелязана с коментар „ЗАДАЧА n“, за да
+   можеш да я сравниш с оригиналния файл.
+
+   1. Променливи        5. Начален банер (hero)
+   2. Основни стилове   6. Меню
+   3. Оформление        7. Нашето кафе
+   4. Хедър             8. Посети ни
+                        9. Футър
+                       10. Преходи и адаптивност (Задача 3 и 5)
+   ========================================================= */
+
+
+/* ---------- 1. ПРОМЕНЛИВИ ---------- */
+:root {
+  --color-forest: #1f3a2e;   /* тъмнозелено: хедър, заглавия     */
+  --color-moss:   #4f6b55;   /* по-меко зелено: второстепенен текст */
+  --color-sage:   #e9eee6;   /* фон на страницата                */
+  --color-paper:  #fbfcf9;   /* картички                         */
+  --color-saffron:#e3a72f;   /* акцент: бутони, цени             */
+  --color-saffron-dark: #c98e1c; /* ЗАДАЧА 3: бутон при посочване */
+  --color-line:   #cfd8cb;   /* тънки рамки                      */
+
+  --font-heading: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body:    "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+  --radius: 6px;
+  --speed: 0.25s;            /* ЗАДАЧА 3: една скорост за всички преходи */
+}
+
+
+/* ---------- 2. ОСНОВНИ СТИЛОВЕ ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-sage);
+  color: var(--color-forest);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--color-forest);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-saffron);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 3. ОФОРМЛЕНИЕ ---------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* ЗАДАЧА 4: когато цъкнеш линк в навигацията, заглавието на
+   секцията да не се скрива под залепващия хедър */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+}
+
+.section-intro {
+  color: var(--color-moss);
+  margin-bottom: 32px;
+}
+
+
+/* ---------- 4. ХЕДЪР И НАВИГАЦИЯ ---------- */
+.site-header {
+  background: var(--color-forest);
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  /* ЗАДАЧА 4: остава горе на екрана, докато скролваш */
+  position: sticky;
+  top: 0;
+  z-index: 10;       /* държи хедъра над картичките и етикетите */
+}
+
+/* ЗАДАЧА 1: логото и навигацията едно до друго.
+   Mobile first: на телефон са едно под друго (колона).
+   Версията на един ред е в част 10. */
+.site-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.logo {
+  display: inline-block;
+  color: var(--color-paper);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  /* ЗАДАЧА 1: margin-bottom е махнат, сега това го прави gap */
+}
+
+.logo span {
+  color: var(--color-saffron);
+  font-weight: 500;
+}
+
+/* ЗАДАЧА 1: линковете на ред, с разстояние чрез gap вместо margin-right */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: var(--color-paper);
+  font-weight: 600;
+
+  /* ЗАДАЧА 3: подчертаване, което е невидимо до посочване */
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-color: transparent;
+}
+
+.main-nav a:hover {
+  text-decoration-color: var(--color-saffron);
+}
+
+
+/* ---------- 5. НАЧАЛЕН БАНЕР (HERO) ---------- */
+.hero {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.eyebrow {
+  color: var(--color-moss);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  /* ЗАДАЧА 5: никога под 2.3rem, никога над 3.4rem,
+     а между тях расте с ширината на екрана (vw) */
+  font-size: clamp(2.3rem, 6vw + 1rem, 3.4rem);
+  font-weight: 800;
+  max-width: 14ch;
+}
+
+.hero-intro {
+  font-size: 1.2rem;
+  max-width: 34em;
+  margin-bottom: 28px;
+}
+
+/* Бутони */
+.btn {
+  display: inline-block;
+  background: var(--color-saffron);
+  color: var(--color-forest);
+  border: 2px solid var(--color-saffron);
+  border-radius: var(--radius);
+  padding: 12px 24px;
+  margin: 0 8px 8px 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--color-forest);
+}
+
+/* ЗАДАЧА 3: бутоните при посочване */
+.btn:hover {
+  background: var(--color-saffron-dark);
+  border-color: var(--color-saffron-dark);
+}
+
+.btn-outline:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  color: var(--color-paper);
+}
+
+/* Картичката „Днешното филтърно“ */
+.brew-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 40px;
+  max-width: 340px;
+}
+
+.brew-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.brew-origin {
+  color: var(--color-moss);
+}
+
+.brew-card dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+}
+
+.brew-card dd {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.brew-notes {
+  border-top: 1px dashed var(--color-line);
+  padding-top: 12px;
+  margin: 0;
+  font-style: italic;
+}
+
+
+/* ---------- 6. МЕНЮ ---------- */
+
+/* ЗАДАЧА 2: картичките са в решетка.
+   Mobile first: тук е 1 колона, 2 и 3 колони има в част 10. */
+.menu-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.menu-item {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  /* ЗАДАЧА 2: margin-bottom е махнат, сега това го прави gap на решетката */
+
+  /* ЗАДАЧА 2: flex колона, за да може цената да се избута надолу */
+  display: flex;
+  flex-direction: column;
+
+  /* ЗАДАЧА 4: етикетът се позиционира спрямо тази картичка */
+  position: relative;
+}
+
+.menu-item h3 {
+  font-size: 1.3rem;
+}
+
+.menu-item p {
+  color: var(--color-moss);
+}
+
+.menu-item .price {
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  margin-top: auto;   /* ЗАДАЧА 2: запълва празното място отгоре = стои най-долу */
+}
+
+/* ЗАДАЧА 3: картичките се повдигат леко при посочване */
+.menu-item:hover {
+  border-color: var(--color-saffron);
+  box-shadow: 0 10px 24px rgba(31, 58, 46, 0.14);
+}
+
+/* ЗАДАЧА 4: етикетът „Най-продавано“ в горния десен ъгъл */
+.badge {
+  position: absolute;
+  top: -12px;          /* отрицателно = излиза над ръба на картичката */
+  right: 16px;
+  background: var(--color-saffron);
+  color: var(--color-forest);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px; /* много голям радиус = форма на хапче */
+}
+
+
+/* ---------- 7. НАШЕТО КАФЕ ---------- */
+.beans {
+  background: var(--color-forest);
+  color: var(--color-sage);
+}
+
+.beans p {
+  max-width: 38em;
+  font-size: 1.15rem;
+}
+
+
+/* ---------- 8. ПОСЕТИ НИ ---------- */
+
+/* ЗАДАЧА 2: двете кутии в решетка (1 колона на телефон,
+   2 колони от 600px нагоре, виж част 10) */
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.visit-info {
+  /* ЗАДАЧА 2: margin-bottom е махнат, сега това го прави gap на решетката */
+}
+
+.hours {
+  border-collapse: collapse;
+}
+
+.hours th,
+.hours td {
+  text-align: left;
+  padding: 8px 24px 8px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.hours th {
+  font-weight: 600;
+}
+
+address {
+  font-style: normal;
+}
+
+
+/* ---------- 9. ФУТЪР ---------- */
+.site-footer {
+  background: var(--color-forest);
+  color: var(--color-line);
+  font-size: 0.9rem;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+
+/* ---------- 10. ПРЕХОДИ И АДАПТИВНОСТ ---------- */
+
+/* ЗАДАЧА 3: анимираме само за хората, които НЕ са поискали
+   от устройството си по-малко движение. Без този блок ефектите
+   при посочване пак работят, просто се сменят веднага. */
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .main-nav a,
+  .menu-item {
+    transition: background-color var(--speed) ease,
+                border-color var(--speed) ease,
+                color var(--speed) ease,
+                text-decoration-color var(--speed) ease,
+                box-shadow var(--speed) ease,
+                transform var(--speed) ease;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ЗАДАЧА 5: таблети и нагоре (600px и повече) */
+@media (min-width: 600px) {
+  /* ЗАДАЧА 1: логото вляво, линковете вдясно, на един ред */
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ЗАДАЧА 5: компютър (900px и повече) */
+@media (min-width: 900px) {
+  .menu-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* текстът на банера и картичката една до друга */
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .brew-card {
+    margin-top: 0;
+    max-width: none;
+  }
+}

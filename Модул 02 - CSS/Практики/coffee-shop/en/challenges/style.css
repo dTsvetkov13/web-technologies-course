@@ -3,7 +3,7 @@
    ---------------------------------------------------------
    The trick: html and body are exactly as tall as the screen,
    and body is a grid with 2 rows (header / cards).
-   The middle row takes whatever height is left (1fr).
+   The cards row takes whatever height is left (1fr).
    ========================================================= */
 
 :root {
@@ -67,6 +67,11 @@ p {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+/* Language switch link */
+.eyebrow a {
+  color: inherit;
 }
 
 h1 {

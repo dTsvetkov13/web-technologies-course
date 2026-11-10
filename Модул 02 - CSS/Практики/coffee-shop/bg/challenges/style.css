@@ -1,0 +1,165 @@
+/* =========================================================
+   Преглед на задачите — събира се на един екран
+   ---------------------------------------------------------
+   Трикът: body е поне колкото екрана на височина и е
+   решетка с 2 реда (заглавие / картички).
+   Редът с картичките взема цялата останала височина (1fr).
+   ========================================================= */
+
+:root {
+  --color-forest: #1f3a2e;
+  --color-moss:   #4f6b55;
+  --color-sage:   #e9eee6;
+  --color-paper:  #fbfcf9;
+  --color-saffron:#e3a72f;
+  --color-line:   #cfd8cb;
+
+  --font-heading: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body:    "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;   /* поне колкото екрана; расте само ако се налага */
+  margin: 0;
+  background: var(--color-sage);
+  color: var(--color-forest);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.45;
+
+  display: grid;
+  grid-template-rows: auto 1fr;   /* заглавие, картички */
+  gap: 3vh;
+  padding: 4vh 32px;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+
+/* ---------- Заглавие ---------- */
+.top {
+  display: grid;
+  gap: 6px;
+  max-width: 60em;
+}
+
+.eyebrow {
+  color: var(--color-moss);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Линк за смяна на езика */
+.eyebrow a {
+  color: inherit;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vh, 2.8rem);
+  font-weight: 800;
+}
+
+
+
+/* ---------- Петте картички ---------- */
+.challenges {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);   /* и петте една до друга */
+  gap: 16px;
+  min-height: 0;
+}
+
+.card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-top: 6px solid var(--color-forest);
+  border-radius: var(--radius);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+}
+
+.card h2 {
+  font-size: 1.35rem;
+}
+
+/* Малки етикети („хапчета“) за CSS понятията */
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tags li {
+  background: var(--color-sage);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+}
+
+/* Очакваният резултат винаги стои най-долу в картичката */
+.result {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-line);
+  color: var(--color-moss);
+}
+
+.result strong {
+  color: var(--color-forest);
+}
+
+
+
+/* ---------- По-малки екрани ----------
+   5 колони стават твърде тесни, затова ползваме 3 + 2.
+   На телефон не се събира на един екран, затова просто се скролва. */
+@media (max-width: 1000px) {
+  .challenges {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 24px 16px;
+  }
+
+  .challenges {
+    grid-template-columns: 1fr;
+  }
+}

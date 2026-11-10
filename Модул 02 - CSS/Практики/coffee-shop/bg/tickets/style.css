@@ -1,19 +1,19 @@
 /* =========================================================
-   Sprint 14 backlog — 5 tickets on one screen
+   Спринт 14 — 5 задачи на един екран
    ---------------------------------------------------------
-   body is a 2-row grid: the sprint header, then the board.
-   The board row takes the rest of the screen height (1fr).
+   body е решетка с 2 реда: заглавието на спринта и дъската.
+   Редът с дъската взема останалата височина на екрана (1fr).
    ========================================================= */
 
 :root {
-  --color-ink:     #1d2a24;   /* main text                    */
-  --color-muted:   #5d6b64;   /* secondary text               */
-  --color-bg:      #eef0ec;   /* page background              */
-  --color-card:    #ffffff;   /* tickets                      */
-  --color-line:    #d5dad4;   /* borders                      */
-  --color-accent:  #1f3a2e;   /* Little Fern green            */
+  --color-ink:     #1d2a24;   /* основен текст                */
+  --color-muted:   #5d6b64;   /* второстепенен текст          */
+  --color-bg:      #eef0ec;   /* фон на страницата            */
+  --color-card:    #ffffff;   /* задачите                     */
+  --color-line:    #d5dad4;   /* рамки                        */
+  --color-accent:  #1f3a2e;   /* зеленото на Little Fern      */
 
-  /* status colours, only used for ticket type and priority */
+  /* цветове за състояние, само за тип и приоритет на задачата */
   --color-bug:     #c2412d;
   --color-story:   #2f7a4f;
   --color-high:    #b4570f;
@@ -44,7 +44,7 @@ body {
   line-height: 1.4;
 
   display: grid;
-  grid-template-rows: auto 1fr;   /* header, board */
+  grid-template-rows: auto 1fr;   /* заглавие, дъска */
   gap: 3vh;
   padding: 3vh 32px;
 }
@@ -59,7 +59,7 @@ code {
 }
 
 
-/* ---------- Sprint header ---------- */
+/* ---------- Заглавие на спринта ---------- */
 .sprint {
   display: flex;
   flex-wrap: wrap;
@@ -75,6 +75,11 @@ code {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted);
+}
+
+/* Линк за смяна на езика */
+.project a {
+  color: inherit;
 }
 
 h1 {
@@ -104,7 +109,7 @@ h1 {
 }
 
 
-/* ---------- Board ---------- */
+/* ---------- Дъска ---------- */
 .board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -112,7 +117,7 @@ h1 {
 }
 
 
-/* ---------- One ticket ---------- */
+/* ---------- Една задача ---------- */
 .ticket {
   background: var(--color-card);
   border: 1px solid var(--color-line);
@@ -122,7 +127,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* grid stretches every ticket in a row to the same height */
+  /* решетката разтяга задачите на един ред до еднаква височина */
   min-width: 0;
 }
 
@@ -137,10 +142,10 @@ h1 {
 .key {
   font-family: var(--font-mono);
   color: var(--color-muted);
-  margin-right: auto;    /* pushes type and priority to the right */
+  margin-right: auto;    /* избутва типа и приоритета вдясно */
 }
 
-/* Ticket type: a small coloured square before the word */
+/* Тип на задачата: малко цветно квадратче пред думата */
 .type::before {
   content: "";
   display: inline-block;
@@ -154,7 +159,7 @@ h1 {
 .type-bug   { color: var(--color-bug); }
 .type-story { color: var(--color-story); }
 
-/* Priority: an arrow before the word */
+/* Приоритет: стрелка пред думата */
 .priority::before {
   content: "\2191 ";     /* ↑ */
 }
@@ -182,7 +187,7 @@ h1 {
   margin-top: 4px;
 }
 
-/* Acceptance criteria look like an empty checklist */
+/* Критериите за приемане изглеждат като празен чеклист */
 .criteria {
   list-style: none;
   padding: 0;
@@ -206,9 +211,9 @@ h1 {
   border-radius: 3px;
 }
 
-/* Bottom row: label, reporter and story points */
+/* Долен ред: етикет, кой е поискал и точки */
 .ticket-bottom {
-  margin-top: auto;      /* always sits at the bottom of the ticket */
+  margin-top: auto;      /* винаги стои най-долу в задачата */
   padding-top: 10px;
   border-top: 1px solid var(--color-line);
   display: flex;
@@ -230,7 +235,7 @@ h1 {
 }
 
 .reporter::before {
-  content: "by ";
+  content: "от ";
 }
 
 .points {
@@ -245,9 +250,9 @@ h1 {
 }
 
 
-/* ---------- Smaller screens ----------
-   5 columns get too narrow: use 3 + 2, then 1 on phones
-   (a phone can't fit 5 tickets on one screen, so it scrolls). */
+/* ---------- По-малки екрани ----------
+   5 колони стават твърде тесни: 3 + 2, после 1 на телефон
+   (на телефон 5 задачи не се събират на един екран, затова се скролва). */
 @media (max-width: 1100px) {
   .board {
     grid-template-columns: repeat(3, 1fr);
